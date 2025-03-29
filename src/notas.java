@@ -7,25 +7,25 @@ public class notas {
 
     // Declaramos las variables necesarias
     /** Nota unidad formativa 1 */
-    double uf1;
+    double notaUf1;
 
     /** Nota unidad formativa 2 */
-    double uf2;
+    double notaUf2;
 
     /** Nota unidad formativa 3 */
-    double uf3;
+    double notaUf3;
 
     /** Acumulado nota 1 (35%) */
-    double acu1;
+    double totalAcu1;
 
     /** Acumulado nota 2 (35%) */
-    double acu2;
+    double totalAcu2;
 
     /** Acumulado nota 3 (30%) */
-    double acu3;
+    double totalAcu3;
 
     /** Nota final */
-    double def;
+    double notaFinal;
 
     /** Scanner: entrada de datos por consola */
     Scanner entrada = new Scanner(System.in);
@@ -36,30 +36,30 @@ public class notas {
     public void IngresaNotas() {
         System.out.println("Ingrese las notas del estudiante");
         System.out.print("Ingrese nota 1: ");
-        uf1 = entrada.nextDouble();
+        notaUf1 = entrada.nextDouble();
         System.out.print("Ingrese nota 2: ");
-        uf2 = entrada.nextDouble();
+        notaUf2 = entrada.nextDouble();
         System.out.print("Ingrese nota 3: ");
-        uf3 = entrada.nextDouble();
+        notaUf3 = entrada.nextDouble();
     }
 
     /**
      * Método: Comprobar rango válido 0 a 10 de las notas
      */
     public void comprobarcion() {
-        if (uf1 > 10) {
+        if (notaUf1 > 10) {
             System.out.println("Nota 1 mal introducida");
         } else {
             System.out.println("Nota 1 correcta");
         }
 
-        if (uf2 > 10) {
+        if (notaUf2 > 10) {
             System.out.println("Nota 2 mal introducida");
         } else {
             System.out.println("Nota 2 correcta");
         }
 
-        if (uf3 > 10) {
+        if (notaUf3 > 10) {
             System.out.println("Nota 3 mal introducida");
         } else {
             System.out.println("Nota 3 correcta");
@@ -70,10 +70,10 @@ public class notas {
      * Método: Calcular acumulados y nota final.
      */
     public void Calculonotas() {
-        acu1 = uf1 * 0.35;
-        acu2 = uf2 * 0.35;
-        acu3 = uf3 * 0.30;
-        def = acu1 + acu2 + acu3;
+        totalAcu1 = notaUf1 * 0.35;
+        totalAcu2 = notaUf2 * 0.35;
+        totalAcu3 = notaUf3 * 0.30;
+        notaFinal = totalAcu1 + totalAcu2 + totalAcu3;
         // Nota calculada pero aún no mostrada
     }
 
@@ -82,23 +82,23 @@ public class notas {
      */
     public void Mostrar() {
         System.out.println("Notas introducidas son:");
-        System.out.println("Nota 1 = " + uf1);
-        System.out.println("Nota 2 = " + uf2);
-        System.out.println("Nota 3 = " + uf3);
-        System.out.println("Acumulado 1 = " + acu1);
-        System.out.println("Acumulado 2 = " + acu2);
-        System.out.println("Acumulado 3 = " + acu3);
-        System.out.println("Nota definitiva = " + def);
+        System.out.println("Nota 1 = " + notaUf1);
+        System.out.println("Nota 2 = " + notaUf2);
+        System.out.println("Nota 3 = " + notaUf3);
+        System.out.println("Acumulado 1 = " + totalAcu1);
+        System.out.println("Acumulado 2 = " + totalAcu2);
+        System.out.println("Acumulado 3 = " + totalAcu3);
+        System.out.println("Nota definitiva = " + notaFinal);
     }
 
     /**
      * Método: Calcula si está aprobado, suspendido o si hay un error.
      */
     public void aprobado() {
-        if (def < 5 && def >= 0) {
+        if (notaFinal < 5 && notaFinal >= 0) {
             System.out.println("Suspendido");
         } else {
-            if (def >= 5 && def <= 10) {
+            if (notaFinal >= 5 && notaFinal <= 10) {
                 System.out.println("Aprobado");
             } else {
                 System.out.println("Error en las notas");

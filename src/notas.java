@@ -33,7 +33,7 @@ public class notas {
     /**
      * Método: Ingresar notas del estudiante.
      */
-    public void IngresaNotas() {
+    public void IngresarNotas() {
         System.out.println("Ingrese las notas del estudiante");
         System.out.print("Ingrese nota 1: ");
         notaUf1 = entrada.nextDouble();
@@ -46,7 +46,7 @@ public class notas {
     /**
      * Método: Comprobar rango válido 0 a 10 de las notas
      */
-    public void comprobarcion() {
+    public void ComprobarNotas() {
         if (notaUf1 > 10) {
             System.out.println("Nota 1 mal introducida");
         } else {
@@ -69,7 +69,7 @@ public class notas {
     /**
      * Método: Calcular acumulados y nota final.
      */
-    public void Calculonotas() {
+    public void CalcularNotas() {
         totalAcu1 = notaUf1 * 0.35;
         totalAcu2 = notaUf2 * 0.35;
         totalAcu3 = notaUf3 * 0.30;
@@ -114,9 +114,9 @@ public class notas {
     public static void main(String[] args) {
         // Se crea el objeto y llamamos a sus métodos
         notas fc = new notas();
-        fc.IngresaNotas();
-        fc.comprobarcion();
-        fc.Calculonotas();
+        fc.IngresarNotas();
+        fc.ComprobarNotas();
+        fc.CalcularNotas();
         fc.Mostrar();
         fc.aprobado();
     }
